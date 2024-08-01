@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Legal Aid</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Modal Window -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button"></span>
+            <br>
+            <form id="application-form">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" required>
+
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" required>
+
+                <label for="telegram">Telegram Account</label>
+                <input type="text" id="telegram" name="telegram" required>
+
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="hero">
+        <img src="logo.png" alt="Crypto Legal Aid Logo">
+        <div class="text">
+            <p>Our company has been operating since 2015 in the field of recovering lost cryptocurrency assets and fraudulent operations. If you invested your money and received only promises, we will recover up to 90% of your invested and earned funds. Our large team of lawyers and crypto analysts will help you in the most difficult situation. And if we can't help you, we will refund your payment.</p>
+            <a href="#contact" class="button">Apply Now</a> <!-- Button with animation -->
+        </div>
+    </div>
+
+    <div class="section white">
+        <h1>Our Specialists</h1>
+        <div class="card-container">
+            <div class="cards-wrapper">
+                <div class="cards">
+                    <!-- First half of cards -->
+                    <div class="card">
+                        <img src="j/j6.jpg" alt="Lawyer 1">
+                        <div class="card-content">
+                            <h3>Matthew Harris</h3>
+                            <p>Cryptocurrency Expert</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="j/j5.jpg" alt="Lawyer 2">
+                        <div class="card-content">
+                            <h3>John Austin</h3>
+                            <p>Financial Lawyer</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="j/j4.jpg" alt="Lawyer 3">
+                        <div class="card-content">
+                            <h3>Mary Murphy</h3>
+                            <p>Investment Specialist</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="j/j3.jpg" alt="Lawyer 4">
+                        <div class="card-content">
+                            <h3>Deborah Brooks</h3>
+                            <p>Rights Consultant</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="j/j2.jpg" alt="Lawyer 5">
+                        <div class="card-content">
+                            <h3>Jeremy Adams</h3>
+                            <p>Rights Consultant</p>
+                        </div>
+                    </div>
+                    <!-- Second half of cards (duplicates) -->
+                    <div class="card">
+                        <img src="j/j6.jpg" alt="Lawyer 1">
+                        <div class="card-content">
+                            <h3>Matthew Harris</h3>
+                            <p>Cryptocurrency Expert</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="j/j5.jpg" alt="Lawyer 2">
+                        <div class="card-content">
+                            <h3>John Austin</h3>
+                            <p>Financial Lawyer</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="j/j4.jpg" alt="Lawyer 3">
+                        <div class="card-content">
+                            <h3>Mary Murphy</h3>
+                            <p>Investment Specialist</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="j/j3.jpg" alt="Lawyer 4">
+                        <div class="card-content">
+                            <h3>Deborah Brooks</h3>
+                            <p>Rights Consultant</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="j/j2.jpg" alt="Lawyer 5">
+                        <div class="card-content">
+                            <h3>Jeremy Adams</h3>
+                            <p>Rights Consultant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section end">
+        <div class="sect-container">
+            <h1>About Us</h1>
+            <h2>Over 3000 satisfied clients to whom we have returned money from various cryptocurrency exchanges.</h2>
+            <h2>Complete client anonymity.</h2>
+            <h2>Exposing fraud and providing legal assistance in court.</h2>
+
+            <br>
+            <p style="color: #dbdbdb;">Cyprus 3071, Limassol, Spiros Kyprianou 70, Magnum Business Center, 2nd floor</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cards = document.querySelector(".cards");
+            const cardWidth = document.querySelector(".card").offsetWidth + 30; // including margins
+            const cardCount = document.querySelectorAll(".card").length;
+        
+            for (let i = 0; i < cardCount; i++) {
+                const clone = document.querySelector(".card-container .cards").children[i].cloneNode(true);
+                cards.appendChild(clone);
+            }
+        
+            const totalWidth = cardWidth * cardCount;
+            cards.style.width = `${totalWidth * 2}px`;
+        });
+    </script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const modal = document.getElementById("modal");
+            const openButton = document.querySelector(".button"); // Button to open modal
+            const closeButton = document.querySelector(".close-button");
+            const form = document.getElementById("application-form");
+    
+            // Open modal
+            openButton.addEventListener("click", function() {
+                modal.classList.add("show");
+                document.body.style.overflow = "hidden"; // Hide scrollbar
+            });
+    
+            // Close modal
+            closeButton.addEventListener("click", function() {
+                modal.classList.remove("show");
+                document.body.style.overflow = ""; // Show scrollbar
+            });
+    
+            // Close modal when clicking outside of it
+            window.addEventListener("click", function(event) {
+                if (event.target === modal) {
+                    modal.classList.remove("show");
+                    document.body.style.overflow = ""; // Show scrollbar
+                }
+            });
+    
+            // Handle form submission (here you can add data submission or other actions)
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent default form submission
+                alert("Form submitted!");
+                modal.classList.remove("show"); // Close modal after submission
+                document.body.style.overflow = ""; // Show scrollbar
+            });
+        });
+    </script>    
+    
+</body>
+</html>
