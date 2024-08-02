@@ -14,6 +14,7 @@ body {
     background-image: url(/1.webp);
     background-size: cover;
     color: white;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,6 +129,13 @@ body {
         flex-direction: column;
         text-align: center;
         padding: 50px 10px;
+        padding-bottom: 30px;
+        max-width: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    }
+
+    .section {
+        max-width: 90%;
     }
 
     .hero img {
@@ -251,12 +259,19 @@ body {
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
 }
 
 .modal.show {
-    display: block;
     opacity: 1;
+    display: block;
+    animation: fadeIn 0.4s;
+}
+
+.modal.close {
+    opacity: 1;
+    display: block;
+    animation: fadeIn 0.4s;
 }
 
 .modal-content {
@@ -265,7 +280,7 @@ body {
     padding: 20px;
     border: 1px solid #888;
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
     border-radius: 10px;
     text-align: left;
     transform: scale(0.9);
@@ -279,6 +294,44 @@ body {
 .modal.show .modal-content {
     transform: scale(1);
     opacity: 1;
+    animation: popupOpen 0.4s forwards;
+
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+}
+
+@keyframes popupOpen {
+    0% {
+        transform: translateY(-150%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 70%;
+    }
 }
 
 .close-button {
