@@ -335,16 +335,21 @@ body {
 }
 
 .close-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-height: 20px;
     color: #aaa;
-    float: right;
-    font-size: 28px;
+    font-size: 38px;
     font-weight: bold;
     cursor: pointer;
+    transition: color 0.2s;
+
 }
 
 .close-button:hover,
 .close-button:focus {
-    color: black;
+    color: rgb(202, 61, 61);
     text-decoration: none;
 }
 
